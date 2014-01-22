@@ -17,6 +17,7 @@ RUN useradd -g test -m -s /bin/bash test
 RUN echo "root:root" | chpasswd
 RUN echo "test:test" | chpasswd
 
+ADD dovecot.conf /etc/dovecot/conf.d/99-test.conf
 ADD start.sh /start.sh
 
 CMD ["/start.sh"]
