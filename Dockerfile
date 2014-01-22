@@ -18,8 +18,7 @@ RUN echo "root:root" | chpasswd
 RUN echo "test:test" | chpasswd
 
 ADD postfix.cf /postfix.cf.test
-RUN cat /postfix.cf.test >> /etc/postfix/main.cf
-RUN rm /postfix.cf.test
+RUN cat /postfix.cf.test >> /etc/postfix/main.cf && rm /postfix.cf.test
 ADD dovecot.conf /etc/dovecot/conf.d/99-test.conf
 ADD start.sh /start.sh
 
