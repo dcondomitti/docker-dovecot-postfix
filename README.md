@@ -1,3 +1,6 @@
+docker-dovecot-postfix
+======================
+
 This is the source to build a Docker image that will let you run temporary IMAP
 and SMTP servers sandboxed on your local machine, in a way compatible with
 Geary.
@@ -27,3 +30,19 @@ The SMTP server will accept mail to <test@example.com>.
 When you're done testing, stop the running image:
 
     sudo docker stop $container
+
+Copyright/License
+-----------------
+
+Copyright 2014 Yorba Foundation
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the [GNU General Public
+License](http://www.gnu.org/licenses/gpl-3.0.html) as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the [GNU General Public
+License](http://www.gnu.org/licenses/gpl-3.0.html) for more details.
