@@ -3,6 +3,6 @@
 /usr/sbin/rsyslogd
 /usr/sbin/sshd
 /usr/sbin/dovecot
-/etc/init.d/postfix start
+/usr/sbin/postfix start
 
 exec /bin/sleep 999d
