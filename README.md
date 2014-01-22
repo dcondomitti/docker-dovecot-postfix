@@ -3,12 +3,15 @@ and SMTP servers sandboxed on your local machine, in a way compatible with
 Geary.
 
 Build the Docker image:
+
     sudo docker build -t test .
 
 Run the image:
+
     container=`sudo docker run -d test`
 
 Find the IP address of the running image:
+
     sudo docker inspect $container | grep IPAddress | cut -d: -f2- | tr -d ' ",'
 
 The image's root password is root, and there's also a normal user named test,
@@ -22,4 +25,5 @@ both as well.
 The SMTP server will accept mail to <test@example.com>.
 
 When you're done testing, stop the running image:
+
     sudo docker stop $container
