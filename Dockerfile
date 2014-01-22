@@ -30,6 +30,6 @@ RUN useradd -g test -m -s /bin/bash test
 RUN echo "root:root" | chpasswd
 RUN echo "test:test" | chpasswd
 
-ADD start.sh /start.sh
+ADD init.sh /init.sh
 
-CMD ["/start.sh"]
+CMD ["/init.sh"]
