@@ -4,13 +4,13 @@
 FROM ubuntu:quantal
 MAINTAINER Charles Lindsay <chaz@yorba.org>
 
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get update -y
+RUN apt-get upgrade -y
 
 # Allow dovecot install to succeed (see
 # https://github.com/dotcloud/docker/issues/1024)
 RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -s /bin/true /sbin/initctl
+RUN ln -sf /bin/true /sbin/initctl
 
 # Allow postfix to install without interaction.
 RUN echo "postfix postfix/mailname string example.com" | debconf-set-selections
@@ -31,5 +31,6 @@ RUN echo "root:root" | chpasswd
 RUN echo "test:test" | chpasswd
 
 ADD init.sh /init.sh
+EXPOSE 22 25 80 110 143 465 993 995
 
 CMD ["/init.sh"]
